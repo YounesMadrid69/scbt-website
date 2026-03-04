@@ -64,14 +64,14 @@ export default function HeroV3() {
       <div className="noise-overlay absolute inset-0 z-10" />
 
       {/* Main content */}
-      <div className="relative z-20 flex h-full flex-col justify-end px-5 pb-24 sm:justify-center sm:px-8 sm:pb-0 md:px-16 lg:px-24">
+      <div className="relative z-20 flex h-full flex-col justify-end px-5 pb-24 sm:px-8 sm:pb-32 md:px-16 md:pb-36 lg:px-24 lg:pb-40">
         <div className="max-w-6xl">
           {/* Pre-title */}
           <motion.div
             initial={{ width: 0 }}
             animate={{ width: "100%" }}
             transition={{ delay: 0.4, duration: 1, ease: [0.76, 0, 0.24, 1] as const }}
-            className="mb-4 overflow-hidden sm:mb-6"
+            className="mb-3 overflow-hidden sm:mb-4"
           >
             <div className="flex items-center gap-3 sm:gap-4">
               <div className="h-[2px] w-8 bg-gold sm:w-12" />
@@ -82,7 +82,7 @@ export default function HeroV3() {
           </motion.div>
 
           {/* Giant split title */}
-          <h1 className="overflow-hidden font-[family-name:var(--font-verbatim)] text-[11vw] font-black uppercase leading-[0.85] tracking-tighter text-white sm:text-[9vw] md:text-[8vw] lg:text-[6.5vw]">
+          <h1 className="overflow-hidden font-[family-name:var(--font-verbatim)] text-[9vw] font-black uppercase leading-[0.85] tracking-tighter text-white sm:text-[8vw] md:text-[7vw] lg:text-[6.5vw]">
             <SplitText text="CRÉER LE" />
             <br />
             <span className="inline-block">
@@ -98,7 +98,7 @@ export default function HeroV3() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.8, duration: 0.8 }}
-            className="mt-5 max-w-md sm:mt-8 sm:max-w-lg"
+            className="mt-3 max-w-md sm:mt-4 sm:max-w-lg"
           >
             <p className="font-[family-name:var(--font-montserrat)] text-sm leading-relaxed text-white/50 sm:text-base md:text-lg">
               Accompagner les jeunes d&apos;aujourd&apos;hui.
@@ -110,7 +110,7 @@ export default function HeroV3() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 2.1, duration: 0.7 }}
-            className="mt-6 flex flex-wrap gap-3 sm:mt-10 sm:gap-4"
+            className="mt-4 flex flex-wrap gap-3 sm:mt-5 sm:gap-4"
           >
             <a
               href="/le-club"
