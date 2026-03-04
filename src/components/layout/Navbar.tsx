@@ -48,7 +48,7 @@ export default function Navbar() {
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         {/* Logo */}
-        <Link href="/" className="relative z-50 flex-shrink-0">
+        <Link href="/final" className="relative z-50 flex-shrink-0">
           <Image
             src="/images/logo-scbt.png"
             alt="SCBT - Sporting Club Bron Terraillon"
