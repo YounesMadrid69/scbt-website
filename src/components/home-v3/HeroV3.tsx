@@ -1,7 +1,7 @@
 "use client";
 
+import { useRef, useEffect } from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
 
 const letterVariants = {
   hidden: { y: 100, opacity: 0 },
@@ -37,6 +37,14 @@ function SplitText({ text, className }: { text: string; className?: string }) {
 }
 
 export default function HeroV3() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.playbackRate = 3;
+    }
+  }, []);
+
   return (
     <section className="relative h-svh min-h-[600px] overflow-hidden">
       {/* Background video */}
@@ -47,6 +55,7 @@ export default function HeroV3() {
         className="absolute inset-0"
       >
         <video
+          ref={videoRef}
           autoPlay
           muted
           loop
@@ -63,35 +72,6 @@ export default function HeroV3() {
 
       {/* Noise grain */}
       <div className="noise-overlay absolute inset-0 z-10" />
-
-      {/* Logo - top left */}
-      <motion.div
-        initial={{ opacity: 0, x: -20 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 0.3, duration: 0.8 }}
-        className="absolute top-6 left-5 z-30 sm:top-8 sm:left-8 md:left-12"
-      >
-        <Image
-          src="/images/logo-scbt.png"
-          alt="SCBT"
-          width={70}
-          height={70}
-          className="h-11 w-11 sm:h-14 sm:w-14 md:h-[70px] md:w-[70px]"
-          priority
-        />
-      </motion.div>
-
-      {/* Year - top right */}
-      <motion.div
-        initial={{ opacity: 0, x: 20 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 0.4, duration: 0.8 }}
-        className="absolute top-8 right-5 z-30 sm:right-8 md:right-12"
-      >
-        <span className="font-[family-name:var(--font-verbatim)] text-[10px] font-bold uppercase tracking-[0.3em] text-white/40 sm:text-sm sm:tracking-[0.4em]">
-          Est. 1964
-        </span>
-      </motion.div>
 
       {/* Main content */}
       <div className="relative z-20 flex h-full flex-col justify-end px-5 pb-24 sm:justify-center sm:px-8 sm:pb-0 md:px-16 lg:px-24">
@@ -112,7 +92,7 @@ export default function HeroV3() {
           </motion.div>
 
           {/* Giant split title */}
-          <h1 className="overflow-hidden font-[family-name:var(--font-verbatim)] text-[15vw] font-black uppercase leading-[0.82] tracking-tighter text-white sm:text-[13vw] md:text-[11vw] lg:text-[9vw]">
+          <h1 className="overflow-hidden font-[family-name:var(--font-verbatim)] text-[11vw] font-black uppercase leading-[0.85] tracking-tighter text-white sm:text-[9vw] md:text-[8vw] lg:text-[6.5vw]">
             <SplitText text="CRÉER" />
             <br />
             <SplitText text="LE CLUB" />
