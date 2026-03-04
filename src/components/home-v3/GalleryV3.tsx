@@ -83,11 +83,18 @@ function GalleryCard({ photo, index }: { photo: typeof PHOTO_SERIES[0]; index: n
       className="group min-w-[320px] cursor-pointer md:min-w-[420px]"
     >
       <div className="relative aspect-[3/4] overflow-hidden">
-        {/* Parallax image placeholder */}
+        {/* Parallax image */}
         <motion.div
           style={{ y: imgY }}
-          className="absolute -inset-[10%] bg-gradient-to-br from-blue-primary/50 to-navy transition-all duration-700 group-hover:scale-105 group-hover:brightness-110"
-        />
+          className="absolute -inset-[10%]"
+        >
+          <Image
+            src={photo.image}
+            alt={photo.caption}
+            fill
+            className="object-cover transition-all duration-700 group-hover:scale-105 group-hover:brightness-110"
+          />
+        </motion.div>
 
         {/* Noise */}
         <div className="noise-overlay absolute inset-0" />

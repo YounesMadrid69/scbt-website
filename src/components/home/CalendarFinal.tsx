@@ -173,6 +173,22 @@ export default function CalendarFinal() {
               </motion.div>
             </AnimatePresence>
           )}
+
+          {/* Swipe indicator - mobile */}
+          {!loading && filteredMatches.length > 1 && (
+            <div className="mt-4 flex items-center justify-center gap-2 sm:hidden">
+              <motion.div
+                animate={{ x: [0, 8, 0] }}
+                transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                className="flex items-center gap-2 text-navy-deep/40"
+              >
+                <span className="font-[family-name:var(--font-verbatim)] text-[10px] font-bold uppercase tracking-[0.2em]">
+                  Glisser
+                </span>
+                <span>&rarr;</span>
+              </motion.div>
+            </div>
+          )}
         </div>
       </motion.div>
     </section>

@@ -25,6 +25,7 @@ const itemVariants = {
 function StreetNewsCard({
   title,
   category,
+  image,
   date,
   featured = false,
 }: {
@@ -45,8 +46,14 @@ function StreetNewsCard({
           : "card-cut-corner h-[220px] md:h-[260px]"
       )}
     >
-      {/* Background with gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-navy-deep via-blue-primary/80 to-navy-deep transition-all duration-500 group-hover:scale-105" />
+      {/* Background image + gradient */}
+      <Image
+        src={image}
+        alt={title}
+        fill
+        className="absolute inset-0 object-cover transition-all duration-500 group-hover:scale-105"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy-deep/60 to-navy-deep/20" />
 
       {/* Noise grain */}
       <div className="noise-overlay absolute inset-0" />

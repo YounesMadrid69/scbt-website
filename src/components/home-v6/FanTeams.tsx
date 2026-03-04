@@ -8,19 +8,13 @@ import {
   useSpring,
 } from "framer-motion";
 import Image from "next/image";
+import { TEAMS_PREVIEW } from "@/lib/constants";
 
 /* ------------------------------------------------------------------ */
 /*  Data                                                              */
 /* ------------------------------------------------------------------ */
 
-const TEAMS = [
-  { name: "Seniors" },
-  { name: "U20" },
-  { name: "U17" },
-  { name: "U15" },
-  { name: "U13" },
-  { name: "Feminines" },
-] as const;
+const TEAMS = TEAMS_PREVIEW;
 
 /* Fan layout parameters — scaled by viewport                         */
 function fanParams(index: number, total: number, mobile: boolean) {
@@ -53,7 +47,7 @@ function FanCard({
   progress,
   mobile,
 }: {
-  team: (typeof TEAMS)[number];
+  team: (typeof TEAMS)[0];
   index: number;
   total: number;
   progress: ReturnType<typeof useSpring>;
@@ -122,14 +116,20 @@ function CardContent({
   hovered,
   mobile,
 }: {
-  team: (typeof TEAMS)[number];
+  team: (typeof TEAMS)[0];
   index: number;
   hovered: boolean;
   mobile: boolean;
 }) {
   return (
     <>
-      <div className="absolute inset-0 bg-gradient-to-b from-blue-primary/40 via-navy-deep to-navy-deep" />
+      <Image
+        src={team.image}
+        alt={team.name}
+        fill
+        className="absolute inset-0 object-cover"
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-navy-deep/50 to-navy-deep" />
       <div className="noise-overlay absolute inset-0" />
 
       <span
