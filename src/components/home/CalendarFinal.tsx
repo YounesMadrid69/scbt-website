@@ -157,7 +157,7 @@ export default function CalendarFinal() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
                 transition={{ duration: 0.3, ease: "easeOut" as const }}
-                className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide"
+                className="-mr-4 flex gap-4 overflow-x-auto pb-4 pl-0 pr-4 scrollbar-hide sm:mr-0 sm:pr-0"
               >
                 {filteredMatches.length > 0 ? (
                   filteredMatches.map((match) => (
@@ -174,21 +174,6 @@ export default function CalendarFinal() {
             </AnimatePresence>
           )}
 
-          {/* Swipe indicator - mobile */}
-          {!loading && filteredMatches.length > 1 && (
-            <div className="mt-4 flex items-center justify-center gap-2 sm:hidden">
-              <motion.div
-                animate={{ x: [0, 8, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-                className="flex items-center gap-2 text-navy-deep/40"
-              >
-                <span className="font-[family-name:var(--font-verbatim)] text-[10px] font-bold uppercase tracking-[0.2em]">
-                  Glisser
-                </span>
-                <span>&rarr;</span>
-              </motion.div>
-            </div>
-          )}
         </div>
       </motion.div>
     </section>
