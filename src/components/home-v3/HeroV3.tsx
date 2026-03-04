@@ -82,7 +82,7 @@ export default function HeroV3() {
           </motion.div>
 
           {/* Giant split title */}
-          <h1 className="overflow-hidden bg-gradient-to-br from-white from-50% via-white/90 via-75% to-gold/60 bg-clip-text font-[family-name:var(--font-verbatim)] text-[9vw] font-black uppercase leading-[0.85] tracking-tighter text-transparent sm:text-[8vw] md:text-[7vw] lg:text-[6.5vw]">
+          <h1 className="overflow-hidden bg-gradient-to-br from-white from-40% via-gold/50 via-75% to-gold/70 bg-clip-text font-[family-name:var(--font-verbatim)] text-[9vw] font-black uppercase leading-[0.85] tracking-tighter text-transparent sm:text-[8vw] md:text-[7vw] lg:text-[6.5vw]">
             <SplitText text="CRÉER LE" />
             <br />
             <SplitText text="CLUB DE DEMAIN" />
