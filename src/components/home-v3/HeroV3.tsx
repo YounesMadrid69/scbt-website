@@ -39,17 +39,23 @@ function SplitText({ text, className }: { text: string; className?: string }) {
 export default function HeroV3() {
   return (
     <section className="relative h-svh min-h-[600px] overflow-hidden">
-      {/* Background image */}
+      {/* Background video */}
       <motion.div
         initial={{ scale: 1.1 }}
         animate={{ scale: 1 }}
         transition={{ duration: 1.8, ease: [0.22, 1, 0.36, 1] as const }}
         className="absolute inset-0"
       >
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('/images/hero-bg.png')" }}
-        />
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 h-full w-full object-cover"
+          poster="/images/hero-bg.png"
+        >
+          <source src="/videos/hero-bg.mp4" type="video/mp4" />
+        </video>
       </motion.div>
 
       {/* Dark overlay */}
