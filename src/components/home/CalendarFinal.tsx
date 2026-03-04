@@ -51,7 +51,10 @@ export default function CalendarFinal() {
       : matches.filter((m) => m.category === activeCategory);
 
   return (
-    <section className="relative overflow-hidden bg-bg-alt px-4 py-16 sm:py-24" id="calendrier">
+    <section className="relative overflow-hidden bg-navy-deep px-4 py-16 sm:py-24" id="calendrier">
+      {/* Noise grain */}
+      <div className="noise-overlay absolute inset-0" />
+
       {/* Deco dots */}
       <div className="pointer-events-none absolute top-12 right-12 hidden opacity-10 md:block">
         <Image src="/images/deco-dots.svg" alt="" width={100} height={100} />
@@ -72,7 +75,7 @@ export default function CalendarFinal() {
               <span className="mb-2 block font-[family-name:var(--font-verbatim)] text-xs font-bold uppercase tracking-[0.2em] text-gold sm:text-sm">
                 Saison 2025-2026
               </span>
-              <h2 className="font-[family-name:var(--font-verbatim)] text-4xl font-black uppercase leading-[0.85] tracking-tight text-navy-deep sm:text-5xl md:text-7xl">
+              <h2 className="font-[family-name:var(--font-verbatim)] text-4xl font-black uppercase leading-[0.85] tracking-tight text-white sm:text-5xl md:text-7xl">
                 PROCHAINS
                 <br />
                 MATCHS
