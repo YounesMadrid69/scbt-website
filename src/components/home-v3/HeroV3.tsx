@@ -1,6 +1,5 @@
 "use client";
 
-import { useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 
 const letterVariants = {
@@ -37,14 +36,6 @@ function SplitText({ text, className }: { text: string; className?: string }) {
 }
 
 export default function HeroV3() {
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.playbackRate = 3;
-    }
-  }, []);
-
   return (
     <section className="relative h-svh min-h-[600px] overflow-hidden">
       {/* Background video */}
@@ -55,7 +46,6 @@ export default function HeroV3() {
         className="absolute inset-0"
       >
         <video
-          ref={videoRef}
           autoPlay
           muted
           loop
@@ -93,12 +83,10 @@ export default function HeroV3() {
 
           {/* Giant split title */}
           <h1 className="overflow-hidden font-[family-name:var(--font-verbatim)] text-[11vw] font-black uppercase leading-[0.85] tracking-tighter text-white sm:text-[9vw] md:text-[8vw] lg:text-[6.5vw]">
-            <SplitText text="CRÉER" />
-            <br />
-            <SplitText text="LE CLUB" />
+            <SplitText text="CRÉER LE" />
             <br />
             <span className="inline-block">
-              <SplitText text="DE " />
+              <SplitText text="CLUB DE " />
               <span className="text-transparent" style={{ WebkitTextStroke: "2px rgba(255,255,255,0.6)" }}>
                 <SplitText text="DEMAIN" />
               </span>
