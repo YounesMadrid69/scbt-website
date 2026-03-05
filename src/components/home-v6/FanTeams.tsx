@@ -201,7 +201,7 @@ export default function FanTeams() {
       ref={sectionRef}
       className="relative bg-bg-alt h-[180vh] md:h-[200vh]"
     >
-      <div className="sticky top-0 flex h-screen flex-col items-center justify-center gap-10 overflow-hidden md:gap-16">
+      <div className="sticky top-0 flex h-screen flex-col items-center justify-center gap-10 overflow-hidden pt-20 md:gap-16">
         {/* Background deco */}
         <div
           className="pointer-events-none absolute inset-0 lion-watermark-light"
